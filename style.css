@@ -1,0 +1,98 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.proposal-gif {
+    max-width: 80%;
+    margin-bottom: 2rem;
+    width: 30%;
+    height: 50%;
+}
+
+.button-container {
+    display: flex;
+    gap: 1rem;
+    position: relative; /* Ensure the button container has a relative position */
+}
+
+button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem; 
+}
+
+#yes-button {
+    background-color: #388e3c;
+    color: white;
+    transition: font-size 0.5s ease;
+    z-index: 1; /* Ensure the "Yes" button is above other elements */
+}
+
+#no-button {
+    background-color: #d32f2f;
+    color: white;
+}
+
+#confirmation-container {
+    display: none;
+}
+
+#are-you-sure-button {
+    font-size: 1rem;
+    background-color: #f2c000;
+    color: black;
+}
+
+#really-sure-button {
+    display: none;
+    font-size: 0.8rem;
+    background-color: #d9534f;
+    color: black;
+}
+
+.confirmation-active #yes-button {
+    transform: scale(1.5);
+}
+
+.confirmation-active #no-button {
+    display: none;
+}
+
+.confirmation-active #are-you-sure-button {
+    background-color: #f2c000;
+    color: black;
+}
+
+.confirmation-active #really-sure-button {
+    display: inline-block;
+    background-color: #d9534f;
+    color: black;
+}
+
+.confirmed #yes-button,
+.confirmed #no-button,
+.confirmed #are-you-sure-button,
+.confirmed #really-sure-button {
+    display: none;
+}
+
+.confirmed {
+    text-align: center;
+}
+
+/* Ensure buttons don't overlap */
+#no-button.no-clicked {
+    margin-left: 1rem; /* Add margin to the left to prevent overlap */
+}
